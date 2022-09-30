@@ -1,0 +1,15 @@
+version: '3'
+services:
+  nginx:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    image: nginx
+    container_name: meu-container
+    ports:
+      - "80:80"
+    networks: 
+      - minha-rede
+networks: 
+  minha-rede:
+    driver: bridge
